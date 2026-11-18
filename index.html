@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15100e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Đường Việt">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Đường Việt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vietnamesisch lernen auf einer Reise von Hà Nội nach Cà Mau – mit systematischer Grammatik, Tönen, Kultur und Spielelementen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+<link rel="stylesheet" href="css/app.css?v=202611181551">
+</head>
+<body>
+<div id="app" class="app">
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <button class="stat stat-streak" id="stat-streak" type="button" aria-label="Serie"><span class="stat-ico" aria-hidden="true"></span><span class="stat-num" id="streak-num">0</span></button>
+      <div class="brand" aria-hidden="true">Đường <em>Việt</em></div>
+      <button class="stat stat-coins" id="stat-coins" type="button" aria-label="Đồng-Münzen"><span class="coin" aria-hidden="true">đ</span><span class="stat-num" id="coins-num">0</span></button>
+      <button class="goal-ring" id="goal-ring" type="button" aria-label="Tagesziel"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.5"/><circle class="ring-fg" id="ring-fg" cx="18" cy="18" r="15.5"/></svg><span id="goal-txt">0</span></button>
+    </div>
+  </header>
+
+  <main id="view" class="view" tabindex="-1"></main>
+
+  <nav class="tabbar" id="tabbar" aria-label="Hauptnavigation">
+    <a href="#reise" data-tab="reise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19c3-1 3-5 6-6s5 1 6-3 2-5 4-6"/><circle cx="4" cy="19" r="1.8"/><circle cx="20" cy="4" r="1.8"/></svg><span>Reise</span></a>
+    <a href="#ueben" data-tab="ueben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/></svg><span>Üben</span><b class="badge" id="due-badge" hidden>0</b></a>
+    <a href="#grammatik" data-tab="grammatik"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4"/><path d="M8 12h8M8 16h6"/></svg><span>Grammatik</span></a>
+    <a href="#sammlung" data-tab="sammlung"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="12" height="15" rx="2"/><path d="M9 3h10a2 2 0 0 1 2 2v13"/></svg><span>Sammlung</span></a>
+    <a href="#profil" data-tab="profil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Profil</span></a>
+  </nav>
+
+  <section id="player" class="player" hidden aria-modal="true" role="dialog"></section>
+  <div id="sheet" class="sheet" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</div>
+
+<script src="data/_core.js?v=202611181551"></script>
+<script src="data/k01.js?v=202611181551"></script>
+<script src="data/k02.js?v=202611181551"></script>
+<script src="data/k03.js?v=202611181551"></script>
+<script src="data/k04.js?v=202611181551"></script>
+<script src="data/k05.js?v=202611181551"></script>
+<script src="data/k06.js?v=202611181551"></script>
+<script src="data/k07.js?v=202611181551"></script>
+<script src="data/k08.js?v=202611181551"></script>
+<script src="data/k09.js?v=202611181551"></script>
+<script src="data/k10.js?v=202611181551"></script>
+<script src="data/k11.js?v=202611181551"></script>
+<script src="data/k12.js?v=202611181551"></script>
+<script src="data/cards.js?v=202611181551"></script>
+<script src="data/meta.js?v=202611181551"></script>
+<script src="js/util.js?v=202611181551"></script>
+<script src="js/viet.js?v=202611181551"></script>
+<script src="js/speech.js?v=202611181551"></script>
+<script src="js/store.js?v=202611181551"></script>
+<script src="js/exercises.js?v=202611181551"></script>
+<script src="js/lesson.js?v=202611181551"></script>
+<script src="js/boss.js?v=202611181551"></script>
+<script src="js/views.js?v=202611181551"></script>
+<script src="js/main.js?v=202611181551"></script>
+</body>
+</html>
